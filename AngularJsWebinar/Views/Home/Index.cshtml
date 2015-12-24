@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="app">
+<head>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/Scripts.js"></script>
+    <script src="~/Scripts/directApp.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>http://www.borakasmer.com</title>
+</head>
+<body ng-controller="MainController">
+    <div ng-controller="SubController">
+        <h1 style="color:red">{{SubMessage}}</h1>
+    </div>
+    @*<div>
+            {{20/3}}
+        </div>
+        <h1>{{Message}}</h1>*@
+    @*<div><strong>Name:</strong>{{User.Name}}</div>
+        <div><strong>Laction:</strong>{{User.Location}}</div>
+        <div><strong>Image:</strong><img ng-src="{{User.Image}}" width="200" title="{{User.Name}}"/></div>*@,
+
+    <h1>{{counter}}</h1>
+    <div search-User></div>
+    <div class="Group" ng-show="User">
+        <div>Name:{{User.name}}</div>
+        <div>Location:{{User.location}}</div>
+        <user-Detail></user-Detail>
+        <hr />
+        <div>
+           <div>Select Degeri:{{orderKey}}</div>
+            <select ng-model="orderKey">
+                <option>name</option>
+                <option>language</option>
+                <option selected="selected">-stargazers_count</option>
+                <option selected="selected">+stargazers_count</option>
+            </select>
+        </div>
+        {{filterKey}}
+        <div>Filter:<input type="text" ng-model="filterKey" placeholder="search user detail..." /></div>
+        <div ng-include="'UserRepo'"></div>
+    </div>
+</body>
+</html>

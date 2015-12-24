@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserRepo</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Language</th>
+            <th>Star</th>
+            <th>Has Wiki</th>
+        </tr>
+        <tr ng-repeat="repo in repos | orderBy:orderKey | filter:filterKey">
+            <td>{{repo.name}}</td>
+            <td>{{repo.language}}</td>
+            <td>{{repo.stargazers_count | number:1}}</td>
+            <td>{{repo.has_wiki | chekcMark}}</td>
+        </tr>
+    </table>
+</body>
+</html>
